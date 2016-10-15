@@ -22,7 +22,7 @@ namespace ExtendingEditUi.Business.Initialization
             DependencyResolver.SetResolver(new StructureMapDependencyResolver(context.Container));
         }
 
-        private static void ConfigureContainer(ConfigurationExpression container)
+        public static void ConfigureContainer(ConfigurationExpression container)
         {
             //Swap out the default ContentRenderer for our custom
             container.For<IContentRenderer>().Use<ErrorHandlingContentRenderer>();

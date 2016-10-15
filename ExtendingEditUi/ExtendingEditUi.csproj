@@ -303,6 +303,7 @@
     <Compile Include="Business\Repositories\UserProfileRepository.cs" />
     <Compile Include="Business\SearchService.cs" />
     <Compile Include="Business\StructureMapDependencyResolver.cs" />
+    <Compile Include="Business\StructureMapScope.cs" />
     <Compile Include="Business\UIDescriptors\ContainerPageUIDescriptor.cs" />
     <Compile Include="Controllers\ContactBlockController.cs" />
     <Compile Include="Controllers\DefaultPageController.cs" />

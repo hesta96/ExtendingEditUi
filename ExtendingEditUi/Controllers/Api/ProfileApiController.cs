@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web.Http;
-using EPiServer.ServiceLocation;
 using ExtendingEditUi.Business.Repositories;
 using ExtendingEditUi.Models.Entities;
 
@@ -15,12 +14,7 @@ namespace ExtendingEditUi.Controllers.Api
         {
             this.userProfileRepository = userProfileRepository;
         }
-
-        public ProfileApiController()
-        {
-            this.userProfileRepository = ServiceLocator.Current.GetInstance<IUserProfileRepository>();
-        }
-
+        
         [AcceptVerbs("GET")]
         public IHttpActionResult SearchUserProfiles(string searchString)
         {

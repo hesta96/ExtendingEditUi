@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Mvc;
+using System.Web.Http.Dependencies;
 using StructureMap;
+using IDependencyResolver = System.Web.Mvc.IDependencyResolver;
 
 namespace ExtendingEditUi.Business
 {
-    public class StructureMapDependencyResolver : IDependencyResolver
+    public class StructureMapDependencyResolver : IDependencyResolver, System.Web.Http.Dependencies.IDependencyResolver
     {
         readonly IContainer _container;
 
@@ -46,5 +47,20 @@ namespace ExtendingEditUi.Business
         {
             return _container.GetAllInstances(serviceType).Cast<object>();
         }
+
+        #region Http IDependencyResolver
+
+        public IDependencyScope BeginScope()
+        {
+            var childContainer = _container.GetNestedContainer();
+            return new StructureMapScope(childContainer);
+        }
+
+        public void Dispose()
+        {
+            _container.Dispose();
+        }
+
+        #endregion
     }
 }
