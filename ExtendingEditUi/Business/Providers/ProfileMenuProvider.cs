@@ -14,7 +14,7 @@ namespace ExtendingEditUi.Business.Providers
                 IsAvailable = (request) => PrincipalInfo.HasEditorAccess
             };
 
-            var profies = new UrlMenuItem("User profiles", "/global/profileadmin/profies", "/profileadmin/profies")
+            var profies = new UrlMenuItem("User profiles", "/global/profileadmin/profiles", "/profileadmin/profiles")
             {
                 IsAvailable = (request) => PrincipalInfo.HasEditorAccess
             };

@@ -471,7 +471,7 @@
     <Content Include="modules\_protected\EPiServer.Packaging.UI\web.config" />
     <Content Include="modules\_protected\EPiServer.Packaging.UI\EPiServer.Packaging.UI.zip" />
     <Content Include="Views\ProfileAdmin\Index.cshtml" />
-    <Content Include="Views\ProfileAdmin\Profies.cshtml" />
+    <Content Include="Views\ProfileAdmin\Profiles.cshtml" />
     <Content Include="Views\ProfileAdmin\Layout\ProfilesLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

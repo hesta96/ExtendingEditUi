@@ -16,7 +16,7 @@ namespace ExtendingEditUi.Controllers
             return View();
         }
 
-        public ActionResult Profies()
+        public ActionResult Profiles()
         {
             var model = new ProfilesViewModel();
 
