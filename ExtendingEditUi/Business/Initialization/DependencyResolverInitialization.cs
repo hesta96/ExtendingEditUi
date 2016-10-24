@@ -1,3 +1,4 @@
+using System.Web.Http;
 using System.Web.Mvc;
 using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
@@ -18,11 +19,13 @@ namespace ExtendingEditUi.Business.Initialization
         public void ConfigureContainer(ServiceConfigurationContext context)
         {
             context.Container.Configure(ConfigureContainer);
+            var resolver = new StructureMapDependencyResolver(context.Container);
 
-            DependencyResolver.SetResolver(new StructureMapDependencyResolver(context.Container));
+            DependencyResolver.SetResolver(resolver);
+            GlobalConfiguration.Configuration.DependencyResolver = resolver;
         }
 
-        public static void ConfigureContainer(ConfigurationExpression container)
+        private static void ConfigureContainer(ConfigurationExpression container)
         {
             //Swap out the default ContentRenderer for our custom
             container.For<IContentRenderer>().Use<ErrorHandlingContentRenderer>();

@@ -58,7 +58,8 @@ namespace ExtendingEditUi.Business
 
         public void Dispose()
         {
-            _container.Dispose();
+            this._container.Dispose();
+            GC.SuppressFinalize(this);
         }
 
         #endregion

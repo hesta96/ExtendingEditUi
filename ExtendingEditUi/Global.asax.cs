@@ -15,13 +15,13 @@ namespace ExtendingEditUi
         {
             AreaRegistration.RegisterAllAreas();
 
-            ConfigureWebApi();
+            //ConfigureWebApi();
         }
 
-        private void ConfigureWebApi()
-        {
-            GlobalConfiguration.Configuration.DependencyResolver = new StructureMapDependencyResolver(new Container(DependencyResolverInitialization.ConfigureContainer));
-        }
+        //private void ConfigureWebApi()
+        //{
+        //    GlobalConfiguration.Configuration.DependencyResolver = new StructureMapDependencyResolver(new Container(DependencyResolverInitialization.ConfigureContainer));
+        //}
 
         protected override void RegisterRoutes(RouteCollection routes)
         {
