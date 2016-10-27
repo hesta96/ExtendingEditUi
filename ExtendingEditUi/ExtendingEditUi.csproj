@@ -299,6 +299,8 @@
     <Compile Include="Business\Rendering\ICustomCssInContentArea.cs" />
     <Compile Include="Business\Rendering\SiteViewEngine.cs" />
     <Compile Include="Business\Rendering\TemplateCoordinator.cs" />
+    <Compile Include="Business\Repositories\ConfigRepository.cs" />
+    <Compile Include="Business\Repositories\IConfigRepository.cs" />
     <Compile Include="Business\Repositories\IUserProfileRepository.cs" />
     <Compile Include="Business\Repositories\UserProfileRepository.cs" />
     <Compile Include="Business\SearchService.cs" />
