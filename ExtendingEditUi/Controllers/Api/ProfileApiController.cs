@@ -43,10 +43,5 @@ namespace ExtendingEditUi.Controllers.Api
             return this.Ok("Update done");
         }
 
-        [AcceptVerbs("GET")]
-        public IHttpActionResult HelloWorld()
-        {
-            return this.Ok("Hello World");
-        }
     }
 }
