@@ -14,25 +14,23 @@ namespace ExtendingEditUi
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-
-            //ConfigureWebApi();
         }
-
-        //private void ConfigureWebApi()
-        //{
-        //    GlobalConfiguration.Configuration.DependencyResolver = new StructureMapDependencyResolver(new Container(DependencyResolverInitialization.ConfigureContainer));
-        //}
 
         protected override void RegisterRoutes(RouteCollection routes)
         {
             base.RegisterRoutes(routes);
 
-            routes.MapHttpRoute(name: "v", routeTemplate: "api/{controller}/{action}/{id}", defaults: new { id = RouteParameter.Optional });
+            routes.MapHttpRoute(name: "webapi", routeTemplate: "api/{controller}/{action}/{id}", defaults: new { id = RouteParameter.Optional });
 
             routes.MapRoute(
                      "ProfileAdmin",
                      "profileadmin/{action}",
                 new { controller = "ProfileAdmin", action = "index" });
+
+            routes.MapRoute(
+                "ExistingPagesReport",
+                "existingpagesreport/{action}",
+                new { controller = "ExistingPagesReport", action = "Index" });
         }
     }
 }
