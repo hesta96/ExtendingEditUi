@@ -54,7 +54,7 @@
                     <div class="epi-size10">
                         <label for="pageTypes">Select PageType</label>
                         <select name="pageType" id="pageType">
-                            @foreach (var type in Model.PageTypes.OrderBy(o => o.Name))
+                            @foreach (var type in Model.PageTypes.Where(w => w.ID != 1).OrderBy(o => o.Name))
                             {
                                 <option value="@type.ID" @(type.ID.ToString() == Model.SelectedPageType ? "selected=selected" : "") >@type.Name</option>
                             }
@@ -79,6 +79,7 @@
                         <tr>
                             <th scope="col">Page Id</th>
                             <th scope="col">Page Name</th>
+                            <th scope="col">Status</th>
                             <th scope="col">Page Url</th>
                             <th scope="col">Published Date</th>
                         </tr>
@@ -87,6 +88,7 @@
                             <tr>
                                 <td style="width: 27%;">@page.ContentLink.ID</td>
                                 <td>@page.PageName</td>
+                                <td>@page.Status</td>
                                 <td>@Url.ContentUrl(page.ContentLink)</td>
                                 <td>@(page.StartPublish.HasValue ? page.StartPublish.Value.ToString("yyyy-MM-dd HH:mm") : "Not published")</td>
                             </tr>

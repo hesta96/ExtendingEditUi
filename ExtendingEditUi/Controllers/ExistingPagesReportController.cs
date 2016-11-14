@@ -54,8 +54,9 @@ namespace ExtendingEditUi.Controllers
 
                 ws.Cells[1, 1].Value = "PageId";
                 ws.Cells[1, 2].Value = "PageName";
-                ws.Cells[1, 3].Value = "PageUrl";
-                ws.Cells[1, 4].Value = "Published Date";
+                ws.Cells[1, 3].Value = "Status";
+                ws.Cells[1, 4].Value = "PageUrl";
+                ws.Cells[1, 5].Value = "Published Date";
 
                 ws.Row(1).Style.Font.Bold = true;
                 ws.Row(1).Style.Locked = true;
@@ -66,8 +67,9 @@ namespace ExtendingEditUi.Controllers
                 {
                     ws.Cells[row, 1].Value = page.ContentLink.ID;
                     ws.Cells[row, 2].Value = page.PageName;
-                    ws.Cells[row, 3].Value = Url.ContentUrl(page.ContentLink);
-                    ws.Cells[row, 4].Value = page.StartPublish.HasValue ? page.StartPublish.Value.ToString("yyyy-MM-dd HH:mm") : "Not published";
+                    ws.Cells[row, 3].Value = page.Status;
+                    ws.Cells[row, 4].Value = Url.ContentUrl(page.ContentLink);
+                    ws.Cells[row, 5].Value = page.StartPublish.HasValue ? page.StartPublish.Value.ToString("yyyy-MM-dd HH:mm") : "Not published";
 
                     ++row;
                 }
