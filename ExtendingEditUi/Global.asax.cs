@@ -1,10 +1,6 @@
-﻿using System;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
-using ExtendingEditUi.Business;
-using ExtendingEditUi.Business.Initialization;
-using StructureMap;
 
 
 namespace ExtendingEditUi
@@ -20,17 +16,10 @@ namespace ExtendingEditUi
         {
             base.RegisterRoutes(routes);
 
-            routes.MapHttpRoute(name: "webapi", routeTemplate: "api/{controller}/{action}/{id}", defaults: new { id = RouteParameter.Optional });
+            routes.MapHttpRoute("webapi", "api/{controller}/{action}/{id}", new { id = RouteParameter.Optional });
 
-            routes.MapRoute(
-                     "ProfileAdmin",
-                     "profileadmin/{action}",
-                new { controller = "ProfileAdmin", action = "index" });
-
-            routes.MapRoute(
-                "ExistingPagesReport",
-                "existingpagesreport/{action}",
-                new { controller = "ExistingPagesReport", action = "Index" });
+            routes.MapRoute("ProfileAdmin", "profileadmin/{action}", new { controller = "ProfileAdmin", action = "index" });
+            routes.MapRoute("ExistingPagesReport", "existingpagesreport/{action}", new { controller = "ExistingPagesReport", action = "Index" });
         }
     }
 }
