@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+  <language name="English" id="en">
+    <enums>
+      <extendingeditui>
+        <models>
+          <visitorgroupcriterion>
+            <browsertype>
+              <ie>Internet Explorer</ie>
+              <firefox>Firefox</firefox>
+              <chrome>Chrome</chrome>
+              <other>Other browser</other>
+            </browsertype>
+          </visitorgroupcriterion>
+        </models>
+      </extendingeditui>
+      <episerver>
+        <filters>
+          <comparecondition>
+            <lessthan>Less than</lessthan>
+            <equal>Equal to</equal>
+            <greaterthan>More than</greaterthan>
+            <notequal>Not equal to</notequal>
+            <startswith>Starts with</startswith>
+            <endswith>Ends with</endswith>
+            <contained>Contains</contained>
+          </comparecondition>
+        </filters>
+      </episerver>
+    </enums>
+    <shell>
+      <cms>
+        <visitorgroups>
+          <criteria>
+            <browser>
+              <browsertype>Browser type</browsertype>
+              <comparecondition>With version</comparecondition>
+              <majorversion>Major version</majorversion>
+            </browser>
+          </criteria>
+        </visitorgroups>
+      </cms>
+    </shell>
+  </language>
+</languages>
