@@ -243,4 +243,6 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/ExtendingEditUi/App_Data/logs
+/ExtendingEditUi/App_Data/Index
 /ExtendingEditUi/App_Data/blobs
