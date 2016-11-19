@@ -2,16 +2,10 @@
 
 profilesApp.controller('profilesCtrl', function ($scope, $http) {
 
-    $scope.currentPage = 1;
     $scope.userProfiles = null;
     $scope.currentObject = null;
     $scope.editObject = false;
     $scope.totalUserProfiles = 0;
-    $scope.portalObjectsPerPage = 15;
-
-    $scope.pagination = {
-        current: 1
-    }
 
     $scope.search = function () {
         var query = "";
@@ -56,7 +50,7 @@ profilesApp.controller('profilesCtrl', function ($scope, $http) {
                     $scope.search($scope.searchString);
                 })
                 .error(function () {
-                    alert("FEL");
+                    alert("Error on update profile");
                 });
         }
     };
