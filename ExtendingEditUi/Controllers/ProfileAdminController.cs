@@ -1,5 +1,4 @@
 ﻿using System.Web.Mvc;
-using ExtendingEditUi.Models.ViewModels;
 
 namespace ExtendingEditUi.Controllers
 {
@@ -14,9 +13,7 @@ namespace ExtendingEditUi.Controllers
 
         public ActionResult Profiles()
         {
-            var model = new ProfilesViewModel();
-
-            return View(model);
+            return View();
         }
     }
 }
